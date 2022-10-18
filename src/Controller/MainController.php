@@ -11,8 +11,13 @@ class MainController extends AbstractController
     #[Route('/', name: 'homepage')]
     public function index(): Response
     {
+        $city = 'ouagadougou';
+        $vegetables = ['carotte', 'tomate', 'patate'];
+
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
+            'city' => $city,
+            'vegetables' => $vegetables,
         ]);
     }
 }
