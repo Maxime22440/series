@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Psr\Container\ContainerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,5 +20,15 @@ class MainController extends AbstractController
             'city' => $city,
             'vegetables' => $vegetables,
         ]);
+    }
+
+    #[Route('/contact', name: 'contact')]
+    public function contact(): Response
+    {
+        $tel = '0123456789';
+        $email='contact@series.com';
+
+        return $this->render('main/contact.html.twig', compact('tel','email'));
+
     }
 }
